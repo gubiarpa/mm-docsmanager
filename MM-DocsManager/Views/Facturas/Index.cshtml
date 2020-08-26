@@ -1,0 +1,32 @@
+﻿@model IEnumerable<MM_EntityLayer.Models.Factura>
+@{
+    ViewData["Title"] = "Facturas";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Facturas</h1>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th scope="col">Número de Factura</th>
+                <th scope="col">Cliente</th>
+                <th scope="col">Fecha</th>
+                <th scope="col">Monto Total</th>
+                <th scope="col">Acción</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <th>@item.NumeroSerie.ToString("000")-@item.NumeroDocumento.ToString("00000000")</th>
+                    <td>@item.NombreCliente</td>
+                    <td>@item.Fecha.ToString("yyyy-MM-dd HH:mm:ss")</td>
+                    <td>@item.MontoTotal.ToString("0.00")</td>
+                    <td><a href="#">Detalle</a> | <a href="#">Editar</a> | <a href="#">Anular</a></td>
+                </tr>
+            }
+
+        </tbody>
+    </table>
+</div>
