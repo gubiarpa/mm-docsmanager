@@ -6,6 +6,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using MM_DataLayer;
 using MM_DocsManager.Controllers.Behavior;
+using MM_DocsManager.ViewModels;
+using MM_EntityLayer.Models;
 
 namespace MM_DocsManager.Controllers
 {
@@ -20,6 +22,19 @@ namespace MM_DocsManager.Controllers
             var facturas = await _context.Facturas.ToListAsync();
 
             return View(facturas);
+        }
+
+        [HttpGet("[controller]/Crear")]
+        public async Task<IActionResult> Create()
+        {
+            var factura = new FacturaCreateViewModel();
+            return View(factura);
+        }
+
+        [HttpPost("[controller]/Crear")]
+        public async Task<IActionResult> CreateDB(FacturaCreateViewModel factura)
+        {
+            return RedirectToAction("Index");
         }
     }
 }

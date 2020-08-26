@@ -10,10 +10,6 @@ namespace MM_EntityLayer.Models
         public static string TableName => "TB_Producto";
         [Column("IDProducto")]
         public Guid Id { get; set; }
-        [Column("Monto")]
-        public decimal Monto { get; set; }
-        [Column("Cantidad")]
-        public int Cantidad { get; set; }
         [Column("Producto")]
         public string NombreProducto { get; set; }
     }
