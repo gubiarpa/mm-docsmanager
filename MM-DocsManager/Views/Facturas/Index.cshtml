@@ -19,7 +19,7 @@
             @foreach (var item in Model)
             {
                 <tr>
-                    <th>@item.NumeroSerie.ToString("000")-@item.NumeroDocumento.ToString("00000000")</th>
+                    <td>@item.NumeroSerie.ToString("000")-@item.NumeroDocumento.ToString("00000000")</td>
                     <td>@item.NombreCliente</td>
                     <td>@item.Fecha.ToString("yyyy-MM-dd HH:mm:ss")</td>
                     <td>@item.MontoTotal.ToString("0.00")</td>
