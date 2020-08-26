@@ -4,22 +4,25 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
+using MM_DataLayer;
+using MM_DocsManager.Controllers.Behavior;
 using MM_DocsManager.Models;
 
 namespace MM_DocsManager.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController : MainControllerBase
     {
-        private readonly ILogger<HomeController> _logger;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(DBContextManager context) : base(context)
         {
-            _logger = logger;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
+            var facturas = await _context.Facturas.ToListAsync();
+
             return View();
         }
 

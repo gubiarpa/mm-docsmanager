@@ -23,8 +23,8 @@ namespace MM_DataLayer
             base.OnModelCreating(modelBuilder);
 
             #region RegisterMap
-            modelBuilder.ApplyConfiguration(new FacturaMap(Factura.TableName));
-            modelBuilder.ApplyConfiguration(new ProductoMap(Producto.TableName));
+            modelBuilder.ApplyConfiguration(new FacturaMap());
+            modelBuilder.ApplyConfiguration(new ProductoMap());
             #endregion
         }
     }
