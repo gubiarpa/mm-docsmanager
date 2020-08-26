@@ -20,7 +20,13 @@ namespace MM_DocsManager.Controllers
 
         public IActionResult Index()
         {
+<<<<<<< Updated upstream
             return View();
+=======
+            var facturas = await _context.Facturas.ToListAsync();
+
+            return View(facturas);
+>>>>>>> Stashed changes
         }
 
         public IActionResult Privacy()
