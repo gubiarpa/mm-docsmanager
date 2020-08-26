@@ -5,4 +5,9 @@
     <RootNamespace>MM_DocsManager</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\MM-DataLayer\MM-DataLayer.csproj" />
+    <ProjectReference Include="..\MM-EntityLayer\MM-EntityLayer.csproj" />
+  </ItemGroup>
+
 </Project>

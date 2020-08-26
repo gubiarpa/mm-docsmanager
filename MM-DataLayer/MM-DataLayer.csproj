@@ -5,4 +5,8 @@
     <RootNamespace>MM_DataLayer</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\MM-EntityLayer\MM-EntityLayer.csproj" />
+  </ItemGroup>
+
 </Project>
