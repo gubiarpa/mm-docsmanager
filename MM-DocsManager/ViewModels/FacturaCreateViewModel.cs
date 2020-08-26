@@ -16,6 +16,6 @@ namespace MM_DocsManager.ViewModels
     {
         public Guid Id { get; set; }
         public decimal Monto { get; set; }
-        public string Cantidad { get; set; }
+        public int Cantidad { get; set; }
     }
 }
