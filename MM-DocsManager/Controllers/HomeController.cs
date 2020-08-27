@@ -21,9 +21,7 @@ namespace MM_DocsManager.Controllers
 
         public async Task<IActionResult> Index()
         {
-            var facturas = await _context.Facturas.ToListAsync();
-
-            return View(facturas);
+            return View();
         }
 
         public IActionResult Privacy()

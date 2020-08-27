@@ -11,7 +11,6 @@ namespace MM_DataLayer
     {
         #region DbSet
         public DbSet<Factura> Facturas { get; set; }
-        public DbSet<Producto> Productos { get; set; }
         #endregion
 
         public DBContextManager(DbContextOptions<DBContextManager> options) : base(options)
@@ -24,7 +23,6 @@ namespace MM_DataLayer
 
             #region RegisterMap
             modelBuilder.ApplyConfiguration(new FacturaMap());
-            modelBuilder.ApplyConfiguration(new ProductoMap());
             #endregion
         }
     }

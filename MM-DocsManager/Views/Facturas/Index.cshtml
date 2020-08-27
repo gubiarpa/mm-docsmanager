@@ -16,6 +16,9 @@
                 <th scope="col">Número de Factura</th>
                 <th scope="col">Cliente</th>
                 <th scope="col">Fecha</th>
+                <th scope="col">Producto</th>
+                <th scope="col">Cantidad</th>
+                <th scope="col">Precio Unit.</th>
                 <th scope="col">Monto Total</th>
                 <th scope="col">Acción</th>
             </tr>
@@ -23,13 +26,16 @@
         <tbody>
             @foreach (var item in Model)
             {
-                <tr>
-                    <td>@item.NumeroSerie.ToString("000")-@item.NumeroDocumento.ToString("00000000")</td>
-                    <td>@item.NombreCliente</td>
-                    <td>@item.Fecha.ToString("yyyy-MM-dd HH:mm:ss")</td>
-                    <td>@item.MontoTotal.ToString("0.00")</td>
-                    <td><a href="#">Detalle</a> | <a href="#">Editar</a> | <a href="#">Anular</a></td>
-                </tr>
+            <tr>
+                <td>@item.NumeroSerie.ToString("000")-@item.NumeroDocumento.ToString("00000000")</td>
+                <td>@item.NombreCliente</td>
+                <td>@item.Fecha.ToString("yyyy-MM-dd HH:mm:ss")</td>
+                <td>@item.Producto</td>
+                <td>@item.Cantidad</td>
+                <td>@{var montoSubtotal = item.MontoTotal / item.Cantidad ; } @montoSubtotal.ToString("0.00")</td>
+                <td>@item.MontoTotal.ToString("0.00")</td>
+                <td><a href="#">Detalle</a> | <a href="#">Editar</a> | <a href="#">Anular</a></td>
+            </tr>
             }
 
         </tbody>

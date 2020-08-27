@@ -21,5 +21,9 @@ namespace MM_EntityLayer.Models
         public DateTime Fecha { get; set; }
         [Column("MontoTotal")]
         public decimal MontoTotal { get; set; }
+        [Column("Cantidad")]
+        public int Cantidad { get; set; }
+        [Column("Producto")]
+        public string Producto { get; set; }
     }
 }

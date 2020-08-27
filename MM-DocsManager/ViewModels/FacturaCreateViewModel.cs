@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -7,15 +8,15 @@ namespace MM_DocsManager.ViewModels
 {
     public class FacturaCreateViewModel
     {
-        public int NumeroSerie { get; set; }
+        [Required]
+        public string NumeroSerie { get; set; }
+        [Required]
         public string NombreCliente { get; set; }
-        public IEnumerable<ProductoItemViewModel> Productos { get; set; }
-    }
-
-    public class ProductoItemViewModel
-    {
-        public Guid Id { get; set; }
-        public decimal Monto { get; set; }
+        [Required]
+        public string Producto { get; set; }
+        [Required]
         public int Cantidad { get; set; }
+        [Required]
+        public decimal PrecioUnit { get; set; }
     }
 }
